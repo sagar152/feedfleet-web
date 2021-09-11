@@ -219,7 +219,7 @@ export const  CreateCampaign= () => {
                                 <div
                                     className="imagediv"
                                     style={{
-                                        border: '2px solid #24a3da',
+                                        // border: '2px solid #24a3da',
                                         height: ' 300px'
                                     }}
                                 >
@@ -271,7 +271,7 @@ export const  CreateCampaign= () => {
                                     <img
                                         src={imgProfile}
                                         alt=""
-                                        style={{ width: "120px", height: "120px", borderRadius: '50%',border:'3px solid #24a3da', verticalAlign: ' middle', position: 'absolute', top: '-65px' }}
+                                        style={{ width: "120px", height: "120px", borderRadius: '50%',border:'3px solid #ddd', verticalAlign: ' middle', position: 'absolute', top: '-65px' }}
                                     
                                     />
                                 </div>

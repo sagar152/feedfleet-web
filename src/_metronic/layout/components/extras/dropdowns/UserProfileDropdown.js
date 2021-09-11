@@ -8,7 +8,9 @@ import objectPath from "object-path";
 import { useHtmlClassService } from "../../../_core/MetronicLayout";
 import { toAbsoluteUrl } from "../../../../_helpers";
 import { DropdownTopbarItemToggler } from "../../../../_partials/dropdowns";
-
+import SettingsIcon from '@material-ui/icons/Settings';
+import ContactSupportIcon from '@material-ui/icons/ContactSupport';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 export function UserProfileDropdown() {
   const { user } = useSelector((state) => state.auth);
   const uiService = useHtmlClassService();
@@ -93,7 +95,7 @@ export function UserProfileDropdown() {
           <Link to="/user-profile" className="navi-item px-8 cursor-pointer">
             <div className="navi-link">
               <div className="navi-icon mr-2">
-                <i className="flaticon2-calendar-3 text-success" />
+                < AccountCircleIcon className="text-success" />
               </div>
               <div className="navi-text">
                 <div className="font-weight-bold cursor-pointer">
@@ -112,10 +114,10 @@ export function UserProfileDropdown() {
           <a className="navi-item px-8">
             <div className="navi-link">
               <div className="navi-icon mr-2">
-                <i className="flaticon2-mail text-warning"></i>
+              <SettingsIcon className="text-warning "/>
               </div>
               <div className="navi-text">
-                <div className="font-weight-bold">My Messages</div>
+                <div className="font-weight-bold">Setting</div>
                 <div className="text-muted">Inbox and tasks</div>
               </div>
             </div>
@@ -124,16 +126,16 @@ export function UserProfileDropdown() {
           <a className="navi-item px-8">
             <div className="navi-link">
               <div className="navi-icon mr-2">
-                <i className="flaticon2-rocket-1 text-danger"></i>
+                <ContactSupportIcon className='text-danger' />
               </div>
               <div className="navi-text">
-                <div className="font-weight-bold">My Activities</div>
+                <div className="font-weight-bold">Support</div>
                 <div className="text-muted">Logs and notifications</div>
               </div>
             </div>
           </a>
 
-          <a className="navi-item px-8">
+          {/* <a className="navi-item px-8">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon2-hourglass text-primary"></i>
@@ -143,7 +145,7 @@ export function UserProfileDropdown() {
                 <div className="text-muted">latest tasks and projects</div>
               </div>
             </div>
-          </a>
+          </a> */}
           <div className="navi-separator mt-3"></div>
 
           <div className="navi-footer  px-8 py-5">

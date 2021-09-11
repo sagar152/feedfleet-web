@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { Redirect, Switch, Route } from "react-router-dom";
 import { LayoutSplashScreen, ContentRoute } from "../_metronic/layout";
-import { BuilderPage } from "./pages/BuilderPage";
+// import { BuilderPage } from "./pages/BuilderPage";
 import { MyPage } from "./pages/MyPage";
 import { DashboardPage } from "./pages/DashboardPage";
 // import {Revieewlist} from '../_metronic/_partials/widgets/lists/Revieewlist.js'
@@ -9,6 +9,7 @@ import { CampaignPage } from "./pages/ReviewCampagin";
 import {CreatePage} from './pages/CreateCampagin'
 import {EditPage} from './pages/Editpage';
 import { VideoPage} from './pages/Videopage'
+import {Replypage} from './pages/Replypage'
 const GoogleMaterialPage = lazy(() =>
   import("./modules/GoogleMaterialExamples/GoogleMaterialPage")
 );
@@ -43,7 +44,8 @@ export default function BasePage() {
         <Route path='/editreview' component={EditPage} />
         <Route path='/create-campaign' component={CreatePage} />
         <Route path="/videos" component={VideoPage} />
-        <ContentRoute path="/builder" component={BuilderPage} />
+        <Route path='/reply' component={Replypage} />
+        {/* <ContentRoute path="/builder" component={BuilderPage} /> */}
         <ContentRoute path="/my-page" component={MyPage} />
         <Route path="/google-material" component={GoogleMaterialPage} />
         <Route path="/react-bootstrap" component={ReactBootstrapPage} />

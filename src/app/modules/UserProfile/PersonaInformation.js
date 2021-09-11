@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import { useSelector, shallowEqual, connect, useDispatch } from "react-redux";
 import { useFormik } from "formik";
@@ -6,8 +8,11 @@ import * as Yup from "yup";
 import { ModalProgressBar } from "../../../_metronic/_partials/controls";
 import { toAbsoluteUrl } from "../../../_metronic/_helpers";
 import * as auth from "../Auth";
+// import { TextField } from '@material-ui/core';
+
 
 function PersonaInformation(props) {
+  
   // Fields
   const [loading, setloading] = useState(false);
   const [pic, setPic] = useState("");
@@ -102,10 +107,10 @@ function PersonaInformation(props) {
       <div className="card-header py-3">
         <div className="card-title align-items-start flex-column">
           <h3 className="card-label font-weight-bolder text-dark">
-            Personal Information
+            Profile Setting
           </h3>
           <span className="text-muted font-weight-bold font-size-sm mt-1">
-            Update your personal informaiton
+            Update your Profile Setting
           </span>
         </div>
         <div className="card-toolbar">
@@ -196,10 +201,11 @@ function PersonaInformation(props) {
             </div>
           </div>
           <div className="form-group row">
-            <label className="col-xl-3 col-lg-3 col-form-label">
+          {/* className="col-xl-3 col-lg-3 col-form-label" */}
+            <div className="col-lg-6 col-xl-6">
+            <label >
               First Name
             </label>
-            <div className="col-lg-9 col-xl-6">
               <input
                 type="text"
                 placeholder="First name"
@@ -215,12 +221,11 @@ function PersonaInformation(props) {
                 </div>
               ) : null}
             </div>
-          </div>
-          <div className="form-group row">
-            <label className="col-xl-3 col-lg-3 col-form-label">
+
+            <div className="col-lg-6 col-xl-6">
+            <label >
               Last Name
             </label>
-            <div className="col-lg-9 col-xl-6">
               <input
                 type="text"
                 placeholder="Last name"
@@ -234,25 +239,114 @@ function PersonaInformation(props) {
                 <div className="invalid-feedback">{formik.errors.lastname}</div>
               ) : null}
             </div>
-          </div>
-          <div className="form-group row">
-            <label className="col-xl-3 col-lg-3 col-form-label">
-              Company Name
+            <div className="col-lg-6 col-xl-6">
+              <div style={{marginTop:'16px'}}>
+            <label >
+              Email
             </label>
-            <div className="col-lg-9 col-xl-6">
               <input
-                type="text"
-                placeholder="Company name"
-                className={`form-control form-control-lg form-control-solid`}
-                name="companyName"
-                {...formik.getFieldProps("companyName")}
+                type="email"
+                placeholder="Last name"
+                className={`form-control form-control-lg form-control-solid ${getInputClasses(
+                  "email"
+                )}`}
+                name="email"
+                {...formik.getFieldProps("email")}
               />
-              <span className="form-text text-muted">
-                If you want your invoices addressed to a company. Leave blank to
-                use your full name.
-              </span>
+              {formik.touched.email && formik.errors.email ? (
+                <div className="invalid-feedback">{formik.errors.email}</div>
+              ) : null}
             </div>
+            </div>
+            {/* <div className="col-lg-6 col-xl-6 ">
+              <div style={{marginTop:'20px'}}>
+              <label>Date</label>
+            <TextField
+    id="date"
+    
+    type="date"
+    defaultValue="2017-05-24"
+    // className={classes.textField}
+    InputLabelProps={{
+      shrink: true,
+    }}
+    style={{width:'100%'}}
+  />
+              </div>
+
+            </div> */}
+            <div className="col-lg-6 col-xl-6">
+            <div style={{marginTop:'20px'}}>
+            <label >
+             Date
+            </label>
+              <input
+                type="date"
+                className={`form-control form-control-lg form-control-solid ${getInputClasses(
+                  "date"
+                )}`}
+                name="date"
+                {...formik.getFieldProps("date")}
+              />
+              {formik.touched.date && formik.errors.date ? (
+                <div className="invalid-feedback">
+                  {formik.errors.date}
+                </div>
+              ) : null}
+            </div>
+            </div>
+<div className='col-md-6'>
+<div style={{marginTop:'20px'}}>
+  <label>Select Male</label>
+<select class="custom-select custom-select-sm">
+  <option selected>Select Gender</option>
+  <option value="1">Male</option>
+  <option value="2">Female</option>
+  <option value="3">Others</option>
+</select>
+ </div>
+ </div>
+
+ <div className='col-md-6'>
+<div style={{marginTop:'20px'}}>
+  <label>Select Country</label>
+<select class="custom-select custom-select-sm">
+  <option selected>Select Country</option>
+  <option value="1">Male</option>
+  <option value="2">Female</option>
+  <option value="3">Others</option>
+</select>
+ </div>
+ </div>
+
+
+ <div className='col-md-6'>
+<div style={{marginTop:'20px'}}>
+  <label>Select State</label>
+<select class="custom-select custom-select-sm">
+  <option selected>Select State</option>
+  <option value="1">Male</option>
+  <option value="2">Female</option>
+  <option value="3">Others</option>
+</select>
+ </div>
+ </div>
+
+ <div className='col-md-6'>
+<div style={{marginTop:'20px'}}>
+  <label>Select City</label>
+<select class="custom-select custom-select-sm">
+  <option selected>Select City</option>
+  <option value="1">Male</option>
+  <option value="2">Female</option>
+  <option value="3">Others</option>
+</select>
+ </div>
+ </div>
+
           </div>
+        
+         
           <div className="row">
             <label className="col-xl-3"></label>
             <div className="col-lg-9 col-xl-6">

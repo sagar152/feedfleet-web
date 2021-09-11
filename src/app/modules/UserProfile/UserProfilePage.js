@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { useSubheader } from "../../../_metronic/layout";
 import AccountInformation from "./AccountInformation";
-import { ProfileOverview } from "./ProfileOverview";
+// import { ProfileOverview } from "./ProfileOverview";
 import ChangePassword from "./ChangePassword";
 import PersonaInformation from "./PersonaInformation";
 import EmailSettings from "./EmailSettings";
@@ -22,10 +22,10 @@ export default function UserProfilePage() {
             exact={true}
             to="/user-profile/profile-overview"
           />
-          <Route
+          {/* <Route
             path="/user-profile/profile-overview"
             component={ProfileOverview}
-          />
+          /> */}
           <Route
             path="/user-profile/account-information"
             component={AccountInformation}

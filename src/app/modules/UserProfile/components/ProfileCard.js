@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { shallowEqual, useSelector } from "react-redux";
-import { Dropdown, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Dropdown} from "react-bootstrap";
 import SVG from "react-inlinesvg";
 import { toAbsoluteUrl } from "../../../../_metronic/_helpers";
 import {
@@ -63,7 +63,7 @@ export function ProfileCard() {
                     {user.firstname} {user.lastname}
                   </a>
                   <div className="text-muted">{user.occupation}</div>
-                  <div className="mt-2">
+                  {/* <div className="mt-2">
                     <a
                       href="#"
                       className="btn btn-sm btn-primary font-weight-bold mr-2 py-2 px-3 px-xxl-5 my-1"
@@ -76,7 +76,7 @@ export function ProfileCard() {
                     >
                       Follow
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               {/* end::User */}
@@ -136,7 +136,7 @@ export function ProfileCard() {
                       </span>
                     </span>
                     <span className="navi-text font-size-lg">
-                      Personal Information
+                     Profile Settings
                     </span>
                   </NavLink>
                 </div>
@@ -185,7 +185,7 @@ export function ProfileCard() {
                     </span>
                   </NavLink>
                 </div>
-                <div className="navi-item mb-2">
+                {/* <div className="navi-item mb-2">
                   <NavLink
                     to="/user-profile/email-settings"
                     className="navi-link py-4"
@@ -204,8 +204,8 @@ export function ProfileCard() {
                       Email settings
                     </span>
                   </NavLink>
-                </div>
-                <div className="navi-item mb-2">
+                </div> */}
+                {/* <div className="navi-item mb-2">
                   <OverlayTrigger
                     placement="right"
                     overlay={<Tooltip>Coming soon...</Tooltip>}
@@ -225,8 +225,8 @@ export function ProfileCard() {
                       </span>
                     </a>
                   </OverlayTrigger>
-                </div>
-                <div className="navi-item mb-2">
+                </div> */}
+                {/* <div className="navi-item mb-2">
                   <OverlayTrigger
                     placement="right"
                     overlay={<Tooltip>Coming soon...</Tooltip>}
@@ -251,8 +251,8 @@ export function ProfileCard() {
                       </span>
                     </a>
                   </OverlayTrigger>
-                </div>
-                <div className="navi-item mb-2">
+                </div> */}
+                {/* <div className="navi-item mb-2">
                   <OverlayTrigger
                     placement="right"
                     overlay={<Tooltip>Coming soon...</Tooltip>}
@@ -270,7 +270,7 @@ export function ProfileCard() {
                       <span className="navi-text">Statements</span>
                     </a>
                   </OverlayTrigger>
-                </div>
+                </div> */}
               </div>
               {/* end::Nav */}
             </div>
